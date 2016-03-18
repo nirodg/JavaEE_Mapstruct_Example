@@ -25,6 +25,10 @@ package com.dorinbrage.github.jme.note.tests;
 
 import static org.junit.Assert.assertEquals;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.junit.Test;
 
 import com.dorinbrage.github.jme.note.enums.NoteStatus;
@@ -36,31 +40,46 @@ import com.dorinbrage.github.jme.note.model.Note;
  */
 
 public class NoteTests {
-    
-	private final Integer noteId = 1; 
+
+	private final Integer noteId = 1;
 	private final String noteContent = "Hello world!";
 	private final Enum<NoteStatus> noteStatus = NoteStatus.PUBLISHED;
-	
-    @Test
-    public void createNote(){
-    	// Create the note
-        Note note = new Note();
-        
-        // Set the id and test it
-        note.setId(noteId);
-        assertEquals(Integer.valueOf(1), note.getId());
-        System.out.println("Expected id \"1\". Passed");
-        
-        // Set the content and test it
-        note.setContent(noteContent);
-        assertEquals(String.valueOf("Hello world!"), note.getContent());
-        System.out.println("Expected content \"Hello world!\". Passed");
-        
-        // Set the status and test it
-        note.setStatus((NoteStatus) noteStatus);
-        assertEquals(NoteStatus.PUBLISHED, note.getStatus());
-        System.out.println("Expected status \"PUBLISHED\". Passed");
-        
-        System.out.println("Note created correctly. Test passed.");
-    }
+
+	@Test
+	public void createNote() throws ParseException {
+		// Create the note
+		Note note = new Note();
+
+		// Set the id and test it
+		note.setId(noteId);
+		assertEquals(Integer.valueOf(1), note.getId());
+		System.out.println("Expected id \"1\". Passed");
+
+		// Set the content and test it
+		note.setContent(noteContent);
+		assertEquals(String.valueOf("Hello world!"), note.getContent());
+		System.out.println("Expected content \"Hello world!\". Passed");
+
+		// Set the status and test it
+		note.setStatus((NoteStatus) noteStatus);
+		assertEquals(NoteStatus.PUBLISHED, note.getStatus());
+		System.out.println("Expected status \"PUBLISHED\". Passed");
+
+		// Set createdAt and test it
+		Date createdAt = new SimpleDateFormat("yyyy-mm-dd").parse("2016-3-15");
+		Date expectedcreatedAt = new SimpleDateFormat("yyyy-mm-dd").parse("2016-3-15");
+		note.setCreatedAt(createdAt);
+		assertEquals(expectedcreatedAt, note.getCreatedAt());
+		System.out.println("Expected creation date \"2016-3-15\". Passed");
+
+		// Set updatedAt and test it
+		Date updatedAt = new SimpleDateFormat("yyyy-mm-dd").parse("2016-3-15");
+		Date expectedUpdatedAt = new SimpleDateFormat("yyyy-mm-dd").parse("2016-3-15");
+		note.setUpdatedAt(updatedAt);
+		assertEquals(expectedUpdatedAt, note.getUpdatedAt());
+		System.out.println("Expected modification date \"2016-3-15\". Passed");
+
+		System.out.println("Note created correctly. Test passed.");
+
+	}
 }

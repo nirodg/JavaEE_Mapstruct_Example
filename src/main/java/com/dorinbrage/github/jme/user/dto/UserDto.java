@@ -21,77 +21,56 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.dorinbrage.github.jme.note.model;
+package com.dorinbrage.github.jme.user.dto;
 
+import com.dorinbrage.github.jme.note.model.Note;
 import java.util.Date;
-
-import com.dorinbrage.github.jme.note.enums.NoteStatus;
+import java.util.List;
 
 /**
  *
  * @author Dorin Gheorghe Brage
  */
-public class Note {
+public class UserDto {
     
-    private Integer id;
+    private Integer Id;
     
-    private String title;
+    private String username;
     
-    private String content;
-    
-    private NoteStatus status;
+    private String email;
 
-    private Date createdAt;
-    
-    private Date updatedAt;
-    
+    private List<Note> notes;
+
     public Integer getId() {
-        return id;
+        return Id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setId(Integer Id) {
+        this.Id = Id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getUsername() {
+        return username;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getContent() {
-        return content;
+    public String getEmail() {
+        return email;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public NoteStatus getStatus() {
-        return status;
+    public List<Note> getNotes() {
+        return notes;
     }
 
-    public void setStatus(NoteStatus status) {
-        this.status = status;
+    public void setNotes(List<Note> notes) {
+        this.notes = notes;
     }
-
-	public Date getCreatedAt() {
-		return createdAt;
-	}
-
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
-
-	public Date getUpdatedAt() {
-		return updatedAt;
-	}
-
-	public void setUpdatedAt(Date updatedAt) {
-		this.updatedAt = updatedAt;
-	}
-    
     
 }

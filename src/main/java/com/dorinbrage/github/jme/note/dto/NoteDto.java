@@ -21,9 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.dorinbrage.github.jme.note.model;
-
-import java.util.Date;
+package com.dorinbrage.github.jme.note.dto;
 
 import com.dorinbrage.github.jme.note.enums.NoteStatus;
 
@@ -31,7 +29,7 @@ import com.dorinbrage.github.jme.note.enums.NoteStatus;
  *
  * @author Dorin Gheorghe Brage
  */
-public class Note {
+public class NoteDto {
     
     private Integer id;
     
@@ -41,10 +39,6 @@ public class Note {
     
     private NoteStatus status;
 
-    private Date createdAt;
-    
-    private Date updatedAt;
-    
     public Integer getId() {
         return id;
     }
@@ -76,22 +70,6 @@ public class Note {
     public void setStatus(NoteStatus status) {
         this.status = status;
     }
-
-	public Date getCreatedAt() {
-		return createdAt;
-	}
-
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
-
-	public Date getUpdatedAt() {
-		return updatedAt;
-	}
-
-	public void setUpdatedAt(Date updatedAt) {
-		this.updatedAt = updatedAt;
-	}
     
     
 }
