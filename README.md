@@ -1,9 +1,8 @@
 JavaEE Mapstruct Example with Maven
 ===================
-
+[![Build Status](https://travis-ci.org/nirodg/JavaEE_Mapstruct_Example.svg?branch=master)](https://travis-ci.org/nirodg/JavaEE_Mapstruct_Example)
 
 # About
-
 Example made in **Java** (**Maven**)  with the objective to show how MapStruct can be used along with some **JUnit** tests.
 
 **Technologies used**:
@@ -15,7 +14,6 @@ Example made in **Java** (**Maven**)  with the objective to show how MapStruct c
 5. [MapStruct Framework](http://mapstruct.org) 
 
 ## Use case 
-
 1. User has notes (as many as the user wants) 
 2. A Note belong to an User
 
